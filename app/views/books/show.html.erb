@@ -1,7 +1,7 @@
 <p id="notice"></p>
 <div class="container">
   <div class="row">
-    <%= render 'users/user', book: @book %>
+    <%= render 'users/show', book: @book %>
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
@@ -9,12 +9,12 @@
           <tr>
             <td>
               <%= link_to user_path(@book.user.id) do %>
-                <% image_tag @book.user.get_profile_image(100,100) %>
+                <%= image_tag @book.user.get_profile_image(100,100) %>
                 <br><%= @book.user.name %>
               <% end %>
             </td>
-            <td><%=  %></td>
-            <td><%=  %></td>
+            <td><%= @book.title %></td>
+            <td><%= @book.body %></td>
           </tr>
         </tbody>
       </table>
