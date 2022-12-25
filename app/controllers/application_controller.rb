@@ -12,4 +12,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
   end
+  # ログインしてるユーザーと投稿してるユーザーが同じかどうか
+  # 同じじゃない場合にリダイレクト先を指定する
 end
